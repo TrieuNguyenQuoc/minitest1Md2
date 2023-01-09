@@ -1,13 +1,20 @@
 import java.util.Scanner;
-
 public class bai1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number;
-        System.out.println("Nhập vào 1 số: ");
-        number = scanner.nextInt();
-        int i = 2;
-        while (i < number) {
+        System.out.print("nhập vào 1 số: ");
+        int numbers = scanner.nextInt();
+        for (int i = 2; i < numbers; i++) {
+            boolean check = true;
+            for (int j = 2; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                System.out.println(i);
+            }
         }
     }
 }
